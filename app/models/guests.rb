@@ -29,8 +29,22 @@ class Guests
         self.all.select {|guest| guest.trip_count > 1}
     end
 
+    
     def self.find_all_by_name(name)
         self.all.select {|guest| guest.name == name}
     end
-
+    
 end
+
+# def self.pro_traveller
+#     info_hash = Hash.new(0)
+#     top_guests = []
+#     all_guests = Trip.all.collect {|trip| trip.guest}
+#     all_guests.each {|guest| info_hash[guest] += 1}
+#     info_hash.each do |guest, trips|
+#         if trips > 1
+#             top_guests << guest
+#         end
+#     end
+#     top_guests
+# end
